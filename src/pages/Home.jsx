@@ -93,9 +93,9 @@ export default function Home() {
           </div>
           <div>
             <SectionHeading
-              eyebrow="About Mega Advance India"
+              eyebrow="About Growth Bharat"
               title="Skills that open doors"
-              copy="Mega Advance India focuses on practical computer and technology education, helping learners build useful skills for study, work and career development."
+              copy="Growth Bharat focuses on practical computer and technology education, helping learners build useful skills for study, work and career development."
             />
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
               {benefits.map(({ icon: Icon, title, text }) => (
@@ -134,7 +134,7 @@ export default function Home() {
             <div className="eyebrow">Career Support</div>
             <h2 className="section-title mt-4">Learn with career support</h2>
             <p className="section-copy mt-5">
-              Training is only one part of the journey. Mega Advance India can support learners with placement-oriented guidance and practical career preparation.
+              Training is only one part of the journey. Growth Bharat can support learners with placement-oriented guidance and practical career preparation.
             </p>
             <div className="mt-8 rounded-2xl border border-[#dceeff] bg-[#f5faff] p-5">
               <p className="text-sm leading-7 text-slate-600">

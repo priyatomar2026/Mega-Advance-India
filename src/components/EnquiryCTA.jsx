@@ -10,7 +10,7 @@ export default function EnquiryCTA() {
             <p className="text-sm font-bold uppercase tracking-[0.12em] text-blue-100">Start your next step</p>
             <h2 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">Ready to start learning?</h2>
             <p className="mt-4 max-w-xl leading-7 text-blue-50">
-              Talk to the Mega Advance India team about courses, training and placement assistance.
+              Talk to the Growth Bharat team about courses, training and placement assistance.
             </p>
           </div>
           <div className="relative z-10 mt-8 flex shrink-0 flex-col gap-3 sm:flex-row md:mt-0">

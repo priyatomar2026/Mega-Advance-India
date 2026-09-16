@@ -25,7 +25,7 @@ export default function Contact() {
         <div className="container-shell py-16 sm:py-20">
           <div className="eyebrow">Get in touch</div>
           <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-[#092f4f] sm:text-5xl">
-            Contact Mega Advance India
+            Contact Growth Bharat
           </h1>
           <p className="section-copy mt-5 max-w-2xl">
             Have a course question or want to discuss training and placement

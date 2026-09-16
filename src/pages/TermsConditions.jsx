@@ -12,7 +12,7 @@ const sections = [
   ("Intellectual Property",
   "Website content, branding, graphics and original materials may be protected by applicable intellectual property laws. Do not copy or reuse protected material without permission."),
   ("External Links",
-  "Links to external websites are provided for convenience. Mega Advance India is not responsible for the content, availability or policies of third-party websites."),
+  "Links to external websites are provided for convenience. Growth Bharat is not responsible for the content, availability or policies of third-party websites."),
   ("Limitation of Liability",
   "The final legal wording should be reviewed by the institute and appropriate legal counsel. This template is not legal advice."),
   ("Changes to Terms",
@@ -30,7 +30,7 @@ export default function TermsConditions() {
           Terms & Conditions
         </h1>
         <p className="section-copy mt-5 max-w-2xl">
-          General website terms for the Mega Advance India website. Review and
+          General website terms for the Growth Bharat website. Review and
           customize these terms before production use.
         </p>
         <div className="mt-12 space-y-9">
