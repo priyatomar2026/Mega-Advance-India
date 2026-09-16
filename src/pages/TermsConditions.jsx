@@ -33,7 +33,7 @@ export default function TermsConditions() {
           General website terms for the Growth Bharat website. Review and
           customize these terms before production use.
         </p>
-        <div className="mt-12 space-y-9">
+        <div className="mt-8 space-y-6">
           {sections.map(([heading, body]) => (
             <section key={heading}>
               <h2 className="font-display text-xl font-semibold text-[#092f4f]">

@@ -12,7 +12,7 @@ function LegalPage({ title, intro, sections }) {
         <div className="eyebrow">Legal</div>
         <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-[#092f4f] sm:text-5xl">{title}</h1>
         <p className="section-copy mt-5 max-w-2xl">{intro}</p>
-        <div className="mt-12 space-y-9">
+        <div className="mt-8 space-y-6">
           {sections.map(([heading, body]) => (
             <section key={heading}>
               <h2 className="font-display text-xl font-semibold text-[#092f4f]">{heading}</h2>

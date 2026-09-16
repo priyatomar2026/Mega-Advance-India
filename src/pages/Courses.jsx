@@ -20,12 +20,12 @@ export default function Courses() {
   return (
     <div>
       <section className="border-b border-slate-200 bg-[#f5faff]">
-        <div className="container-shell py-16 sm:py-20">
+        <div className="container-shell py-8 sm:py-16">
           <div className="eyebrow">Course Catalogue</div>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold tracking-tight text-[#092f4f] sm:text-5xl">
+          <h1 className="mt-3 max-w-3xl font-display text-4xl font-bold tracking-tight text-[#092f4f] sm:text-5xl">
             Courses & Training Programs
           </h1>
-          <p className="section-copy mt-5 max-w-2xl">
+          <p className="section-copy mt-3 max-w-2xl">
             Explore computer, diploma, programming, networking, data, AI and digital marketing programs.
           </p>
         </div>
@@ -65,7 +65,7 @@ export default function Courses() {
             </div>
           </div>
 
-          <div className="mt-10 flex items-end justify-between gap-4">
+          <div className="mt-8 flex items-end justify-between gap-4">
             <SectionHeading
               eyebrow="Programs"
               title="Find your next learning path"
@@ -77,11 +77,11 @@ export default function Courses() {
           </div>
 
           {filtered.length ? (
-            <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {filtered.map((course) => <CourseCard key={course.name} course={course} />)}
             </div>
           ) : (
-            <div className="mt-10 rounded-2xl border border-dashed border-slate-300 p-12 text-center">
+            <div className="mt-8 rounded-2xl border border-dashed border-slate-300 p-8 text-center">
               <p className="font-semibold text-[#092f4f]">No courses found</p>
               <p className="mt-2 text-sm text-slate-500">Try another search term or category.</p>
             </div>

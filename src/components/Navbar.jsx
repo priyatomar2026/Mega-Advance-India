@@ -28,7 +28,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
-      <div className="container-shell flex h-[76px] items-center justify-between gap-6">
+      <div className="container-shell flex h-16 items-center justify-between gap-4 sm:h-[72px] sm:gap-4">
         <Brand onClick={() => setOpen(false)} />
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
@@ -73,7 +73,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-slate-200 bg-white lg:hidden">
+        <div className="absolute left-0 right-0 top-full max-h-[calc(100vh-64px)] overflow-y-auto border-t border-slate-200 bg-white shadow-soft lg:hidden sm:max-h-[calc(100vh-76px)]">
           <nav className="container-shell flex flex-col gap-1 py-4" aria-label="Mobile navigation">
             {links.map((item) =>
               item.path ? (

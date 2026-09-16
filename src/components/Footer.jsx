@@ -5,9 +5,9 @@ import Brand from "./Brand";
 export default function Footer() {
   return (
     <footer className="bg-[#092f4f] text-slate-200">
-      <div className="container-shell grid gap-12 py-16 md:grid-cols-[1.35fr_1fr_1fr_1.1fr]">
+      <div className="container-shell grid gap-8 py-12 md:grid-cols-[1.35fr_1fr_1fr_1.1fr]">
         <div>
-          <Brand />
+          <Brand light />
           <p className="mt-5 max-w-sm text-sm leading-7 text-slate-300">
             Practical computer, IT, data and AI learning with a career-focused approach and placement assistance.
           </p>
@@ -29,7 +29,7 @@ export default function Footer() {
             <Link className="hover:text-white" to="/privacy-policy">Privacy Policy</Link>
             <Link className="hover:text-white" to="/terms-and-conditions">Terms & Conditions</Link>
           </div>
-          <h3 className="mt-8 font-display text-sm font-semibold text-white">Courses</h3>
+          <h3 className="mt-6 font-display text-sm font-semibold text-white">Courses</h3>
           <div className="mt-4 flex flex-wrap gap-2 text-xs text-slate-300">
             <span>Computer</span><span>Programming</span><span>Data & AI</span><span>Digital Marketing</span>
           </div>

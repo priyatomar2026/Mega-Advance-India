@@ -41,12 +41,12 @@ select {
 }
 
 .section-pad {
-  padding-block: 88px;
+  padding-block: 64px;
 }
 
 @media (max-width: 640px) {
   .section-pad {
-    padding-block: 64px;
+    padding-block: 40px;
   }
 }
 
@@ -97,6 +97,28 @@ select {
 
 .hero-image::after {
   content: "";
+}
+
+.home-page > .section-pad {
+  padding-block: 56px;
+}
+
+.home-page .section-copy {
+  margin-top: 1rem;
+}
+
+@media (max-width: 640px) {
+  .home-page > .section-pad {
+    padding-block: 32px;
+  }
+
+  .home-page .section-copy {
+    margin-top: 0.75rem;
+  }
+
+  .home-page .home-card {
+    padding: 0.875rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

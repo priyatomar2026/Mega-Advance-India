@@ -22,7 +22,7 @@ export default function Contact() {
   return (
     <div>
       <section className="border-b border-slate-200 bg-[#f5faff]">
-        <div className="container-shell py-16 sm:py-20">
+        <div className="container-shell py-8 sm:py-12">
           <div className="eyebrow">Get in touch</div>
           <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-[#092f4f] sm:text-5xl">
             Contact Growth Bharat
@@ -35,7 +35,7 @@ export default function Contact() {
       </section>
 
       <section className="section-pad">
-        <div className="container-shell grid gap-12 lg:grid-cols-[.75fr_1.25fr]">
+        <div className="container-shell grid gap-8 lg:grid-cols-[.75fr_1.25fr]">
           <div>
             <h2 className="font-display text-2xl font-bold text-[#092f4f]">
               Talk to the team

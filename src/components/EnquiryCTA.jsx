@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
 
-export default function EnquiryCTA() {
+export default function EnquiryCTA({ compact = false }) {
   return (
-    <section className="section-pad">
+    <section className={`section-pad ${compact ? "home-compact-cta" : ""}`}>
       <div className="container-shell">
-        <div className="relative overflow-hidden rounded-3xl bg-[#0b63ad] px-7 py-12 text-white sm:px-12 md:flex md:items-center md:justify-between md:gap-10">
+        <div className="relative overflow-hidden rounded-3xl bg-[#0b63ad] px-7 py-9 text-white sm:px-12 sm:py-10 md:flex md:items-center md:justify-between md:gap-10">
           <div className="relative z-10 max-w-2xl">
             <p className="text-sm font-bold uppercase tracking-[0.12em] text-blue-100">Start your next step</p>
             <h2 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">Ready to start learning?</h2>
@@ -13,7 +13,7 @@ export default function EnquiryCTA() {
               Talk to the Growth Bharat team about courses, training and placement assistance.
             </p>
           </div>
-          <div className="relative z-10 mt-8 flex shrink-0 flex-col gap-3 sm:flex-row md:mt-0">
+          <div className="relative z-10 mt-6 flex shrink-0 flex-col gap-3 sm:flex-row md:mt-0">
             <Link to="/contact" className="focus-ring inline-flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-3.5 text-sm font-bold text-[#0b63ad] hover:bg-blue-50">
               Contact Us <FiArrowRight />
             </Link>
