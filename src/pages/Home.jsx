@@ -143,16 +143,16 @@ export default function Home() {
 
   return (
     <div className="home-page">
-      <section className="relative overflow-hidden bg-[#f3f9ff]">
+      <section className="home-hero relative overflow-hidden bg-[#f3f9ff]">
         <div className="pointer-events-none absolute -right-28 -top-32 h-96 w-96 rounded-full bg-[#cceaff]/60 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-48 left-1/3 h-80 w-80 rounded-full bg-white/80 blur-3xl" />
-        <div className="container-shell relative grid min-h-0 items-center gap-8 py-8 pb-12 sm:gap-12 sm:py-12 sm:pb-16 lg:min-h-[610px] lg:grid-cols-[1.02fr_.98fr] lg:py-16">
+        <div className="home-hero-inner container-shell relative grid min-h-0 items-center gap-8 py-8 pb-12 sm:gap-12 sm:py-12 sm:pb-16 lg:min-h-[560px] lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:py-12 xl:gap-16">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#b9ddff] bg-white/80 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.12em] text-[#0b63ad]">
               <span className="h-2 w-2 rounded-full bg-[#3aa8e8]" /> Learn.
               Practise. Grow.
             </div>
-            <h1 className="mt-4 max-w-2xl font-display text-[2.45rem] font-bold leading-[1.08] tracking-[-0.035em] text-[#092f4f] sm:mt-5 sm:text-5xl lg:text-[3.75rem]">
+            <h1 className="home-hero-title mt-4 max-w-2xl font-display text-[clamp(2.25rem,3.5vw,3.5rem)] font-bold leading-[1.08] tracking-[-0.035em] text-[#092f4f] sm:mt-5">
               Turn curiosity into{" "}
               <span className="text-[#1677c8]">career-ready skills.</span>
             </h1>
@@ -213,7 +213,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative mx-auto mt-2 w-full max-w-lg lg:mt-0 lg:justify-self-end">
+          <div className="home-hero-media relative mx-auto mt-2 w-full min-w-0 max-w-lg lg:mt-0 lg:justify-self-end">
             <div className="absolute -left-5 top-8 z-10 hidden rounded-2xl border border-white/80 bg-white/90 p-4 shadow-soft sm:block">
               <div className="flex items-center gap-3">
                 <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#eff8ff] text-[#0b63ad]">
@@ -233,7 +233,7 @@ export default function Home() {
               <img
                 src={heroImage}
                 alt="Students learning together in a training environment"
-                className="h-[230px] w-full object-cover sm:h-[390px] lg:h-[490px]"
+              className="h-[230px] w-full object-cover sm:h-[390px] lg:h-[440px] xl:h-[470px]"
               />
             </div>
             <div className="absolute -bottom-4 right-3 max-w-[220px] rounded-2xl bg-[#092f4f] p-3 text-white shadow-soft sm:-bottom-5 sm:right-7 sm:max-w-[250px] sm:p-4">
@@ -276,7 +276,7 @@ export default function Home() {
       </section>
 
       <section id="about" className="section-pad bg-white">
-        <div className="container-shell grid items-center gap-9 sm:gap-14 lg:grid-cols-[.95fr_1.05fr]">
+        <div className="container-shell grid items-center gap-9 sm:gap-14 lg:grid-cols-[minmax(0,.95fr)_minmax(0,1.05fr)]">
           <div className="overflow-hidden rounded-3xl">
             <img
               src={learningImage}
@@ -290,7 +290,7 @@ export default function Home() {
               title="Skills that open doors"
               copy="Growth Bharat focuses on practical computer and technology education, helping learners build useful skills for study, work and career development."
             />
-            <div className="mt-6 grid gap-4 sm:mt-8 sm:gap-5 sm:grid-cols-2">
+            <div className="mt-6 grid min-w-0 gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-5">
               {benefits.map(({ icon: Icon, title, text }) => (
                 <div
                   key={title}
@@ -336,7 +336,7 @@ export default function Home() {
       {/* placement sec*/}
 
       <section id="placement" className="section-pad bg-white">
-        <div className="container-shell grid items-center gap-8 sm:gap-14 lg:grid-cols-[.9fr_1.1fr]">
+        <div className="container-shell grid items-center gap-8 sm:gap-14 lg:grid-cols-[minmax(0,.9fr)_minmax(0,1.1fr)]">
           <div>
             <div className="eyebrow">Career Support</div>
             <h2 className="section-title mt-4">Learn with career support</h2>
@@ -354,11 +354,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid min-w-0 gap-3 sm:grid-cols-2">
             {placementPoints.map(({ icon: Icon, title, text }) => (
               <div
                 key={title}
-                className="home-card rounded-2xl border border-slate-200 bg-white p-2 shadow-sm sm:p-5"
+                className="home-card rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5"
               >
                 <div className="grid h-11 w-11 place-items-center rounded-xl bg-[#eff8ff] text-xl text-[#0b63ad]">
                   <Icon />
@@ -381,7 +381,7 @@ export default function Home() {
             title="Built around useful technology skills"
             copy="A straightforward learning catalogue covering foundational computer skills through modern technology topics."
           />
-          <div className="mx-auto mt-7 grid max-w-5xl gap-3 sm:mt-10 sm:gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto mt-7 grid max-w-none gap-3 sm:mt-9 sm:gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
               [
                 FiMonitor,
@@ -422,7 +422,7 @@ export default function Home() {
       </section>
 
       <section className="section-pad home-tight-section bg-[#f5faff]">
-        <div className="container-shell grid items-center gap-6 lg:grid-cols-[.75fr_1.25fr]">
+        <div className="container-shell grid items-center gap-6 lg:grid-cols-[minmax(0,.75fr)_minmax(0,1.25fr)]">
           <SectionHeading
             eyebrow="Learner voices"
             title="A learning journey that feels possible"
@@ -495,7 +495,7 @@ export default function Home() {
       </section>
 
       <section className="section-pad home-tight-section bg-white">
-        <div className="container-shell grid gap-6 lg:grid-cols-[.8fr_1.2fr]">
+        <div className="container-shell grid gap-6 lg:grid-cols-[minmax(0,.8fr)_minmax(0,1.2fr)]">
           <SectionHeading
             eyebrow="FAQs"
             title="Questions before you begin?"

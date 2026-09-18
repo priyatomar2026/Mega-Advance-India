@@ -1,8 +1,14 @@
+
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* =========================================
+   GLOBAL
+========================================= */
 
 :root {
   color: #17324a;
@@ -12,15 +18,48 @@
   text-rendering: optimizeLegibility;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  width: 100%;
+  max-width: 100%;
   background: #ffffff;
 }
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Prevent media from creating overflow */
+img,
+video,
+svg,
+canvas {
+  max-width: 100%;
+}
+
+img {
+  display: block;
+  height: auto;
+}
+
+/* =========================================
+   INTERACTIVE ELEMENTS
+========================================= */
 
 button,
 a,
@@ -30,25 +69,124 @@ select {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* =========================================
+   TEXT
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  max-width: 100%;
+}
+
+/* Don't break normal words unnecessarily */
+p {
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
 ::selection {
   background: #b9ddff;
   color: #092f4f;
 }
 
+/* =========================================
+   GLOBAL CONTAINER
+========================================= */
+
 .container-shell {
-  width: min(1180px, calc(100% - 32px));
+  width: min(92%, 1600px);
+  max-width: 1600px;
   margin-inline: auto;
+  min-width: 0;
 }
 
-.section-pad {
-  padding-block: 64px;
+/* Important for nested flex/grid children */
+.container-shell,
+.container-shell > *,
+.container-shell .grid,
+.container-shell .flex {
+  min-width: 0;
 }
 
-@media (max-width: 640px) {
-  .section-pad {
-    padding-block: 40px;
+/* =========================================
+   LARGE DESKTOP
+   1600px+
+========================================= */
+
+@media (min-width: 1600px) {
+  .container-shell {
+    width: min(92%, 1650px);
+    max-width: 1650px;
   }
 }
+
+/* =========================================
+   SECTION SPACING
+========================================= */
+
+.section-pad {
+  padding-block: clamp(42px, 3vw, 58px);
+}
+
+/* Correct anchor offset for sticky/fixed navbar */
+[id] {
+  scroll-margin-top: 80px;
+}
+
+/* =========================================
+   LAPTOP / MEDIUM DESKTOP
+========================================= */
+
+@media (max-width: 1199px) {
+  .container-shell {
+    width: min(94%, 1280px);
+  }
+
+  .section-pad {
+    padding-block: 46px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+  .container-shell {
+    width: calc(100% - 40px);
+  }
+
+  .section-pad {
+    padding-block: 42px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 640px) {
+  .container-shell {
+    width: calc(100% - 32px);
+  }
+
+  .section-pad {
+    padding-block: 34px;
+  }
+
+  [id] {
+    scroll-margin-top: 70px;
+  }
+}
+
+/* =========================================
+   EYEBROW
+========================================= */
 
 .eyebrow {
   display: inline-flex;
@@ -65,33 +203,82 @@ select {
   content: "";
   width: 24px;
   height: 2px;
+  flex-shrink: 0;
   background: #3aa8e8;
 }
 
+/* =========================================
+   SECTION TITLE
+========================================= */
+
 .section-title {
+  margin: 0;
   font-family: "Poppins", sans-serif;
   color: #092f4f;
-  font-size: clamp(2rem, 4vw, 3.05rem);
-  line-height: 1.12;
+  font-size: clamp(1.75rem, 2vw, 2.4rem);
+  line-height: 1.15;
   letter-spacing: -0.025em;
   font-weight: 700;
 }
 
+/* =========================================
+   SECTION COPY
+========================================= */
+
 .section-copy {
   color: #607487;
-  line-height: 1.8;
+  line-height: 1.7;
+  max-width: 760px;
 }
+
+/* =========================================
+   CARDS
+========================================= */
 
 .card-border {
   border: 1px solid #e3edf5;
 }
 
-.focus-ring:focus-visible {
-  outline: 3px solid rgba(22, 119, 200, 0.25);
-  outline-offset: 3px;
+/*
+  Prevent cards/flex/grid children
+  from forcing their parent wider.
+*/
+.card-border,
+.home-card {
+  min-width: 0;
+  max-width: 100%;
 }
 
+/* =========================================
+   GRID SAFETY
+========================================= */
+
+/*
+  This is important for the problem visible
+  in your screenshot.
+
+  Grid children must be allowed to shrink.
+*/
+.grid > *,
+[class*="grid-cols"] > * {
+  min-width: 0;
+}
+
+/* =========================================
+   FLEX SAFETY
+========================================= */
+
+.flex > * {
+  min-width: 0;
+}
+
+/* =========================================
+   HERO IMAGE
+========================================= */
+
 .hero-image {
+  width: 100%;
+  max-width: 100%;
   box-shadow: 0 28px 60px rgba(9, 47, 79, 0.18);
 }
 
@@ -99,13 +286,94 @@ select {
   content: "";
 }
 
-.home-page > .section-pad {
-  padding-block: 56px;
+/* =========================================
+   HOME PAGE
+========================================= */
+
+.home-page {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
-.home-page .section-copy {
-  margin-top: 1rem;
+.home-page > .section-pad {
+  padding-block: clamp(44px, 3vw, 56px);
 }
+
+/* =========================================
+   LARGE DESKTOP HOME
+========================================= */
+
+@media (min-width: 1600px) {
+  .home-page > .section-pad {
+    padding-block: 50px;
+  }
+}
+
+/* =========================================
+   HOME COPY
+========================================= */
+
+.home-page .section-copy {
+  margin-top: 0.85rem;
+}
+
+/* =========================================
+   HOME PAGE LARGE DESKTOP
+   Keep the existing tablet/mobile layout intact.
+========================================= */
+
+@media (min-width: 1200px) {
+  .home-page {
+    overflow-x: clip;
+  }
+
+  .home-page .container-shell {
+    width: min(calc(100% - 96px), 1680px);
+  }
+
+  .home-page > .section-pad {
+    padding-block: 48px;
+  }
+
+  .home-page .home-hero-inner {
+    min-height: 600px;
+    gap: clamp(48px, 4vw, 76px);
+    padding-block: 48px 56px;
+  }
+
+  .home-page .home-hero-title {
+    font-size: clamp(2.5rem, 2.65vw, 3.25rem);
+  }
+
+  .home-page .home-hero-media {
+    max-width: 680px;
+  }
+
+  .home-page .home-hero-media img {
+    height: clamp(430px, 25vw, 500px);
+  }
+
+  .home-page .section-title {
+    font-size: clamp(1.75rem, 1.8vw, 2.25rem);
+  }
+
+  .home-page .section-copy {
+    max-width: 680px;
+  }
+
+  .home-page .home-tight-section {
+    padding-block: 44px;
+  }
+
+  .home-page .home-compact-cta {
+    padding-block: 44px 52px;
+  }
+}
+
+/* =========================================
+   MOBILE HOME
+========================================= */
 
 @media (max-width: 640px) {
   .home-page > .section-pad {
@@ -113,13 +381,38 @@ select {
   }
 
   .home-page .section-copy {
-    margin-top: 0.75rem;
+    margin-top: 0.7rem;
   }
 
   .home-page .home-card {
     padding: 0.875rem;
   }
+
+  .home-page .home-hero-title {
+    font-size: clamp(2rem, 8vw, 2.25rem);
+  }
+
+  .home-page .section-title {
+    font-size: clamp(1.45rem, 6vw, 1.8rem);
+  }
+
+  .home-page .home-compact-cta h2 {
+    font-size: 1.75rem;
+  }
 }
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.focus-ring:focus-visible {
+  outline: 3px solid rgba(22, 119, 200, 0.25);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
 
 @media (prefers-reduced-motion: reduce) {
   html {

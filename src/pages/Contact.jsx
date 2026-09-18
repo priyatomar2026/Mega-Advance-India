@@ -21,10 +21,10 @@ export default function Contact() {
 
   return (
     <div>
-      <section className="border-b border-slate-200 bg-[#f5faff]">
+      <section id="contact" className="border-b border-slate-200 bg-[#f5faff] scroll-mt-[76px]">
         <div className="container-shell py-8 sm:py-12">
           <div className="eyebrow">Get in touch</div>
-          <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-[#092f4f] sm:text-5xl">
+          <h1 className="mt-4 font-display text-[clamp(2rem,3vw,2.7rem)] font-bold tracking-tight text-[#092f4f]">
             Contact Growth Bharat
           </h1>
           <p className="section-copy mt-5 max-w-2xl">
@@ -76,7 +76,7 @@ export default function Contact() {
 
           <form
             onSubmit={submit}
-            className="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8"
+            className="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft sm:p-7"
           >
             <div className="grid gap-5 sm:grid-cols-2">
               <Field

@@ -19,8 +19,7 @@ export default function Navbar() {
   const goToSection = (id) => {
     setOpen(false);
     if (location.pathname !== "/") {
-      navigate("/");
-      window.setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }), 80);
+      navigate(`/#${id}`);
       return;
     }
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -28,7 +27,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
-      <div className="container-shell flex h-16 items-center justify-between gap-4 sm:h-[72px] sm:gap-4">
+      <div className="container-shell flex h-16 items-center justify-between gap-4 sm:h-[68px] sm:gap-4">
         <Brand onClick={() => setOpen(false)} />
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
@@ -79,7 +78,7 @@ export default function Navbar() {
               item.path ? (
                 <Link
                   key={item.label}
-                  to={item.path}
+                  to={item.label === "Home" ? "/" : item.path}
                   onClick={() => setOpen(false)}
                   className="focus-ring rounded-lg px-3 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50"
                 >

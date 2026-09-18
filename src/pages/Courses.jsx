@@ -20,9 +20,9 @@ export default function Courses() {
   return (
     <div>
       <section className="border-b border-slate-200 bg-[#f5faff]">
-        <div className="container-shell py-8 sm:py-16">
+        <div className="container-shell py-8 sm:py-12">
           <div className="eyebrow">Course Catalogue</div>
-          <h1 className="mt-3 max-w-3xl font-display text-4xl font-bold tracking-tight text-[#092f4f] sm:text-5xl">
+          <h1 className="mt-3 max-w-3xl font-display text-3xl font-bold tracking-tight text-[#092f4f] sm:text-4xl lg:text-[2.7rem]">
             Courses & Training Programs
           </h1>
           <p className="section-copy mt-3 max-w-2xl">

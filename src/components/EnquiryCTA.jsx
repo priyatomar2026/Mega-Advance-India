@@ -5,10 +5,10 @@ export default function EnquiryCTA({ compact = false }) {
   return (
     <section className={`section-pad ${compact ? "home-compact-cta" : ""}`}>
       <div className="container-shell">
-        <div className="relative overflow-hidden rounded-3xl bg-[#0b63ad] px-7 py-9 text-white sm:px-12 sm:py-10 md:flex md:items-center md:justify-between md:gap-10">
+        <div className="relative overflow-hidden rounded-3xl bg-[#0b63ad] px-6 py-8 text-white sm:px-10 sm:py-9 md:flex md:items-center md:justify-between md:gap-10">
           <div className="relative z-10 max-w-2xl">
             <p className="text-sm font-bold uppercase tracking-[0.12em] text-blue-100">Start your next step</p>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">Ready to start learning?</h2>
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-[2.1rem]">Ready to start learning?</h2>
             <p className="mt-4 max-w-xl leading-7 text-blue-50">
               Talk to the Growth Bharat team about courses, training and placement assistance.
             </p>

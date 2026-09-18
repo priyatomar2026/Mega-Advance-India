@@ -26,7 +26,7 @@ export default function TermsConditions() {
     <section className="section-pad">
       <div className="container-shell max-w-4xl">
         <div className="eyebrow">Legal</div>
-        <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-[#092f4f] sm:text-5xl">
+        <h1 className="mt-4 font-display text-3xl font-bold tracking-tight text-[#092f4f] sm:text-4xl lg:text-[2.7rem]">
           Terms & Conditions
         </h1>
         <p className="section-copy mt-5 max-w-2xl">
