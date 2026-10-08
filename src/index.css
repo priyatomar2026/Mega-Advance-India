@@ -1,0 +1,432 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+:root {
+  color: #17324a;
+  background: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  width: 100%;
+  max-width: 100%;
+  background: #ffffff;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* =========================================
+   MEDIA
+========================================= */
+
+img,
+video,
+svg,
+canvas {
+  max-width: 100%;
+}
+
+img {
+  display: block;
+  height: auto;
+}
+
+/* =========================================
+   INTERACTIVE
+========================================= */
+
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================
+   TEXT
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  max-width: 100%;
+}
+
+p {
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+::selection {
+  background: #b9ddff;
+  color: #092f4f;
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container-shell {
+  width: min(92%, 1400px);
+  max-width: 1400px;
+  margin-inline: auto;
+  min-width: 0;
+}
+
+.container-shell,
+.container-shell > *,
+.container-shell .grid,
+.container-shell .flex {
+  min-width: 0;
+}
+
+/* =========================================
+   SECTION SPACING
+   Reduced globally
+========================================= */
+
+.section-pad {
+  padding-block: 34px;
+}
+
+/* Anchor offset */
+[id] {
+  scroll-margin-top: 76px;
+}
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+@media (max-width: 1199px) {
+  .container-shell {
+    width: min(94%, 1200px);
+  }
+
+  .section-pad {
+    padding-block: 30px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+  .container-shell {
+    width: calc(100% - 32px);
+  }
+
+  .section-pad {
+    padding-block: 26px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 640px) {
+  .container-shell {
+    width: calc(100% - 28px);
+  }
+
+  .section-pad {
+    padding-block: 22px;
+  }
+
+  [id] {
+    scroll-margin-top: 68px;
+  }
+}
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #0b63ad;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 20px;
+  height: 2px;
+  flex-shrink: 0;
+  background: #3aa8e8;
+}
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.section-title {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #092f4f;
+  font-size: clamp(1.55rem, 2vw, 2.15rem);
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+/* =========================================
+   SECTION COPY
+========================================= */
+
+.section-copy {
+  color: #607487;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  max-width: 700px;
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.card-border {
+  border: 1px solid #e3edf5;
+}
+
+.card-border,
+.home-card {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* =========================================
+   GRID SAFETY
+========================================= */
+
+.grid > *,
+[class*="grid-cols"] > * {
+  min-width: 0;
+}
+
+/* =========================================
+   FLEX SAFETY
+========================================= */
+
+.flex > * {
+  min-width: 0;
+}
+
+/* =========================================
+   HERO IMAGE
+========================================= */
+
+.hero-image {
+  width: 100%;
+  max-width: 100%;
+  box-shadow: 0 20px 45px rgba(9, 47, 79, 0.15);
+}
+
+/* =========================================
+   HOME
+========================================= */
+
+.home-page {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.home-page > .section-pad {
+  padding-block: 38px;
+}
+
+/* =========================================
+   HOME COPY
+========================================= */
+
+.home-page .section-copy {
+  margin-top: 0.7rem;
+}
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (min-width: 1200px) {
+  .home-page {
+    overflow-x: clip;
+  }
+
+  .home-page .container-shell {
+    width: min(calc(100% - 80px), 1500px);
+  }
+
+  /*
+    Keep sections compact instead of
+    adding large vertical gaps.
+  */
+  .home-page > .section-pad {
+    padding-block: 38px;
+  }
+
+  /* Hero can still be larger */
+  .home-page .home-hero-inner {
+    min-height: 540px;
+    gap: clamp(40px, 3vw, 64px);
+    padding-block: 36px 42px;
+  }
+
+  .home-page .home-hero-title {
+    font-size: clamp(2.35rem, 2.5vw, 3rem);
+  }
+
+  .home-page .home-hero-media {
+    max-width: 640px;
+  }
+
+  .home-page .home-hero-media img {
+    height: clamp(400px, 24vw, 470px);
+  }
+
+  .home-page .section-title {
+    font-size: clamp(1.65rem, 1.8vw, 2.15rem);
+  }
+
+  .home-page .section-copy {
+    max-width: 680px;
+  }
+
+  /* Remove excessive custom section spacing */
+  .home-page .home-tight-section {
+    padding-block: 34px;
+  }
+
+  .home-page .home-compact-cta {
+    padding-block: 34px 40px;
+  }
+}
+
+/* =========================================
+   MOBILE HOME
+========================================= */
+
+@media (max-width: 640px) {
+  .home-page > .section-pad {
+    padding-block: 26px;
+  }
+
+  .home-page .section-copy {
+    margin-top: 0.6rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .home-page .home-card {
+    padding: 0.8rem;
+  }
+
+  .home-page .home-hero-title {
+    font-size: clamp(1.85rem, 8vw, 2.15rem);
+    line-height: 1.12;
+  }
+
+  .home-page .section-title {
+    font-size: clamp(1.4rem, 6vw, 1.7rem);
+    line-height: 1.18;
+  }
+
+  .home-page .home-compact-cta h2 {
+    font-size: 1.6rem;
+  }
+
+  .home-page .home-tight-section,
+  .home-page .home-compact-cta {
+    padding-block: 26px;
+  }
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .container-shell {
+    width: calc(100% - 24px);
+  }
+
+  .section-pad,
+  .home-page > .section-pad {
+    padding-block: 22px;
+  }
+
+  .home-page .section-title {
+    font-size: 1.35rem;
+  }
+
+  .home-page .section-copy {
+    font-size: 0.85rem;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.focus-ring:focus-visible {
+  outline: 3px solid rgba(22, 119, 200, 0.25);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
